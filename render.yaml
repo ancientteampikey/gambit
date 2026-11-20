@@ -4,7 +4,4 @@ services:
     runtime: docker
     dockerfilePath: ./Dockerfile
     healthCheckPath: /api/health
-    disk:
-      name: gambit-data
-      mountPath: /app/data
-      sizeGB: 1
+    
