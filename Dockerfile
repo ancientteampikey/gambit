@@ -7,7 +7,7 @@ COPY frontend/ ./
 RUN npm run build
 
 FROM debian:bookworm-slim AS stockfish
-RUN apt-get update && apt-get install -y --no-install-recommends g++ make && rm -rf /var/lib/apt/lists/*
+RUN apt-get update && apt-get install -y --no-install-recommends g++ make curl ca-certificates && rm -rf /var/lib/apt/lists/*
 WORKDIR /build/stockfish
 COPY stockfish/Stockfish-master/ ./Stockfish-master/
 WORKDIR /build/stockfish/Stockfish-master/src
